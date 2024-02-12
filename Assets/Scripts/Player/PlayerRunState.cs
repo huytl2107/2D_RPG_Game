@@ -9,11 +9,29 @@ public class PlayerRunState : PlayerBaseState
     public override void EnterState()
     {
         Debug.Log("Tao la run");
+        player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.walk);
     }
 
     public override void UpdateState()
     {
         base.UpdateState();
+        player.UpdateObjectDirX();
+        if(player.DirY == 0)
+        {
+            player.Anim.SetInteger("Facing", (int)GameEnum.EPlayerFacing.horizontal);
+        }
+        else if (player.DirY > 0)
+        {
+            player.Anim.SetInteger("Facing", (int)GameEnum.EPlayerFacing.back);
+        }
+        else if(player.DirY < 0 && player.DirX != 0)
+        {
+            player.Anim.SetInteger("Facing", (int)GameEnum.EPlayerFacing.horizontal);
+        }
+        else
+        {
+            player.Anim.SetInteger("Facing", (int)GameEnum.EPlayerFacing.front);
+        }
     }
 
     public override void FixedUpdateState()

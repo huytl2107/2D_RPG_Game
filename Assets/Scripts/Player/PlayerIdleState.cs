@@ -10,6 +10,7 @@ public class PlayerIdleState : PlayerBaseState
     {
         Debug.Log("Tao la idle");
         player.Rb.velocity = new Vector2(0f, 0f);
+        player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.idle);
     }
 
     public override void UpdateState()

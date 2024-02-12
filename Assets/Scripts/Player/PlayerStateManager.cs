@@ -10,6 +10,7 @@ public class PlayerStateManager : MonoBehaviour
 
     private Rigidbody2D _rb;
     private BoxCollider2D _col;
+    private Animator _anim;
 
     private float _dirX;
     private float _dirY;
@@ -19,14 +20,17 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerStateFactory State { get => _state; set => _state = value; }
     public Rigidbody2D Rb { get => _rb; set => _rb = value; }
     public BoxCollider2D Col { get => _col; set => _col = value; }
-    public global::System.Single DirX { get => _dirX; set => _dirX = value; }
-    public global::System.Single DirY { get => _dirY; set => _dirY = value; }
-    public global::System.Single MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
+
+    public Animator Anim { get => _anim; set => _anim = value; }
+    public float DirX { get => _dirX; set => _dirX = value; }
+    public float DirY { get => _dirY; set => _dirY = value; }
+    public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
 
     private void Awake()
     {
         State = new PlayerStateFactory(this);
 
+        Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
         Col = GetComponent<BoxCollider2D>();
     }
@@ -47,5 +51,15 @@ public class PlayerStateManager : MonoBehaviour
     private void FixedUpdate() 
     {
         CurrentState.FixedUpdateState();
+    }
+
+    public void UpdateObjectDirX()
+    {
+        switch (DirX)
+        {
+            case 1: transform.rotation = Quaternion.Euler(0, 0, 0); break;
+            case -1: transform.rotation = Quaternion.Euler(0, 180, 0); break;
+            default: break;
+        }
     }
 }
