@@ -14,7 +14,12 @@ public class PlayerStateManager : MonoBehaviour
 
     private float _dirX;
     private float _dirY;
+
+    [Header("Speed")]
     [SerializeField] private float _moveSpeed;
+
+    [Header("Childern Object")]
+    [SerializeField] private GameObject _attackZone;
 
     public PlayerBaseState CurrentState { get => _currentState; set => _currentState = value; }
     public PlayerStateFactory State { get => _state; set => _state = value; }
@@ -25,6 +30,7 @@ public class PlayerStateManager : MonoBehaviour
     public float DirX { get => _dirX; set => _dirX = value; }
     public float DirY { get => _dirY; set => _dirY = value; }
     public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
+    public GameObject AttackZone { get => _attackZone; set => _attackZone = value; }
 
     private void Awake()
     {
@@ -39,6 +45,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         CurrentState = State.Idle();
         CurrentState.EnterState();
+        AttackZone.SetActive(false);
     }
 
     private void Update()

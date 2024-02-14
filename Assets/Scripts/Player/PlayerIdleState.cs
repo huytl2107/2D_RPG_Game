@@ -28,7 +28,11 @@ public class PlayerIdleState : PlayerBaseState
         if(player.DirX != 0 || player.DirY!=0)
         {
             SwitchState(factory.Run());
-        } 
+        }
+        else if(Input.GetKeyDown(KeyCode.J))
+        {
+            SwitchState(factory.Attack());
+        }
     }
 
     public override void ExitState()

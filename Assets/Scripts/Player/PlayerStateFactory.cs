@@ -14,4 +14,8 @@ public class PlayerStateFactory
     {
         return new PlayerRunState(_context, this);
     }
+    public PlayerBaseState Attack()
+    {
+        return new PlayerAttackState(_context, this);
+    }
 }
