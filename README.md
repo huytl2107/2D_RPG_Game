@@ -7,5 +7,14 @@
         - Cảm giác thành tựu: Cung cấp một hệ thống thành tựu ngắn hạn và dài hạn để người chơi cảm thấy hứng thú và có động lực trong quá trình chơi
 
 ## 2. Thiết kế trò chơi:
-   - Class Diagram.
    - UseCase Diagram.
+      - UseCase tổng quắt 
+         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/316e3a64-1016-4c43-b816-5f3055ff81e8)
+      - UseCase 1
+         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/6468a267-c2c4-4946-93e0-7529626c50d6)
+      - UseCase 2
+         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/3d077083-d935-420b-919f-e18f32944d3f)
+      - UseCase 3
+         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/40ad7ca0-96ec-4c5a-9028-065972e8a732)
+   - Class Diagram.
+
