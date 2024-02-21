@@ -21,6 +21,9 @@
          ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/fc90bb8a-d75b-4870-b0aa-9782b9122015)
       - Items And Iventory:
         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/8a7eb848-5aa4-4670-99a4-dff3ba276078)
+      - NPCs:
+        ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/28a8b72b-97d0-4edf-b462-efe8c7131e70)
+
 
 
 
