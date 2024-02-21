@@ -18,6 +18,7 @@
          ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/40ad7ca0-96ec-4c5a-9028-065972e8a732)
    - Class Diagram:
       - PlayerStateMachine:
-         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/a6142790-a884-4720-af9c-fdb8f49b5a66)
+         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/39a2a712-326b-4dbe-a15b-ac95a554118b)
+
   
 
