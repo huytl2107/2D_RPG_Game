@@ -23,7 +23,8 @@
         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/8a7eb848-5aa4-4670-99a4-dff3ba276078)
       - NPCs:
         ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/28a8b72b-97d0-4edf-b462-efe8c7131e70)
-
+      - Singleton and ObjectPool:
+        ![image](https://github.com/huytl2107/2D_RPG_Game/assets/152854861/419a4af2-b595-47cc-b54d-f93eca7cc7d1)
 
 
 
