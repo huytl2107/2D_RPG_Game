@@ -18,4 +18,12 @@ public class PlayerStateFactory
     {
         return new PlayerAttackState(_context, this);
     }
+    public PlayerBaseState Farming()
+    {
+        return new PlayerFarmingState(_context, this);
+    }
+    public PlayerBaseState Fishing()
+    {
+        return new PlayerFishingState(_context, this);
+    }
 }

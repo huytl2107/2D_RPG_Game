@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackState : PlayerBaseState
+public class PlayerFarmingState : PlayerBaseState
 {
     private float _lifeTime;
-    public PlayerAttackState(PlayerStateManager currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
+
+    public PlayerFarmingState(PlayerStateManager currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
     }
 
     public override void EnterState()
     {
-        player.AttackZone.SetActive(true);
-        Debug.Log("Tao la attack");
-        _lifeTime = 0;
-        player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.attack);
+        Debug.Log("Tao la farming");
+        player.Rb.velocity = new Vector2(0f, 0f);
+        player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.farming);
     }
 
     public override void UpdateState()
@@ -25,7 +25,7 @@ public class PlayerAttackState : PlayerBaseState
 
     public override void FixedUpdateState()
     {
-        player.Rb.velocity = new Vector2(player.DirX, player.DirY).normalized * player.MoveSpeed;
+        
     }
 
     public override void CheckSwitchState()
@@ -38,6 +38,6 @@ public class PlayerAttackState : PlayerBaseState
 
     public override void ExitState()
     {
-        player.AttackZone.SetActive(true);
+
     }
 }

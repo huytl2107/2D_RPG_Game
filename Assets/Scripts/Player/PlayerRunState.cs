@@ -49,6 +49,14 @@ public class PlayerRunState : PlayerBaseState
         {
             SwitchState(factory.Attack());
         }
+        else if(Input.GetKeyDown(KeyCode.K) && player.OnFarmingZone)
+        {
+            SwitchState(factory.Farming());
+        }
+        else if(Input.GetKeyDown(KeyCode.K) && player.OnFishingZone)
+        {
+            SwitchState(factory.Fishing());
+        }
     }
 
     public override void ExitState()
