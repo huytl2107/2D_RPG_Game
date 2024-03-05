@@ -15,6 +15,7 @@ public class PlayerFarmingState : PlayerBaseState
         Debug.Log("Tao la farming");
         player.Rb.velocity = new Vector2(0f, 0f);
         player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.farming);
+        GameObjectPrefab.Instance.GetPlantingArea(player.transform.position);
     }
 
     public override void UpdateState()
@@ -30,7 +31,7 @@ public class PlayerFarmingState : PlayerBaseState
 
     public override void CheckSwitchState()
     {
-        if(_lifeTime >= 0.5f)
+        if(_lifeTime >= 0.3f)
         {
             SwitchState(factory.Idle());
         }
