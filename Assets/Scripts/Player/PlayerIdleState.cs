@@ -33,11 +33,11 @@ public class PlayerIdleState : PlayerBaseState
         {
             SwitchState(factory.Attack());
         }
-        else if(Input.GetKeyDown(KeyCode.K) && player.OnFarmingZone)
+        else if(Input.GetKeyDown(KeyCode.K))
         {
             SwitchState(factory.Farming());
         }
-        else if(Input.GetKeyDown(KeyCode.K) && player.OnFishingZone)
+        else if(Input.GetKeyDown(KeyCode.L) && player.OnFishingZone)
         {
             SwitchState(factory.Fishing());
         }

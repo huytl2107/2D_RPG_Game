@@ -7,6 +7,8 @@ TagManager:
   - AttackZone
   - FarmingZone
   - FishingZone
+  - PlantingArea
+  - Plants
   layers:
   - Default
   - TransparentFX

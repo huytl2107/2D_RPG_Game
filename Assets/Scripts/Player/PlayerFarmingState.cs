@@ -14,8 +14,7 @@ public class PlayerFarmingState : PlayerBaseState
     {
         Debug.Log("Tao la farming");
         player.Rb.velocity = new Vector2(0f, 0f);
-        player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.farming);
-        GameObjectPrefab.Instance.GetPlantingArea(player.transform.position);
+        CheckAndChoseAnim();
     }
 
     public override void UpdateState()
@@ -40,5 +39,20 @@ public class PlayerFarmingState : PlayerBaseState
     public override void ExitState()
     {
 
+    }
+
+    public void CheckAndChoseAnim()
+    {
+        if(player.OnPlantingArea)
+        {
+            player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.seeding);
+            GameObjectPrefab.Instance.GetPoolObject(GameEnum.EObjectPrefab.pumkimPrefab, player.transform.position);
+        }
+        else
+        {
+            Debug.Log("Cuoocs ddaast broo");
+            player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.farming);
+            GameObjectPrefab.Instance.GetPoolObject(GameEnum.EObjectPrefab.plantingAreaPrefab, player.transform.position);
+        }
     }
 }

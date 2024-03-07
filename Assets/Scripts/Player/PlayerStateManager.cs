@@ -15,7 +15,7 @@ public class PlayerStateManager : MonoBehaviour
     private float _dirX;
     private float _dirY;
 
-    private bool _onFarmingZone = false;
+    private bool _onPlantingArea = false;
     private bool _onFishingZone = false;
 
     [Header("Speed")]
@@ -34,7 +34,7 @@ public class PlayerStateManager : MonoBehaviour
     public float DirY { get => _dirY; set => _dirY = value; }
     public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
     public GameObject AttackZone { get => _attackZone; set => _attackZone = value; }
-    public bool OnFarmingZone { get => _onFarmingZone; set => _onFarmingZone = value; }
+    public bool OnPlantingArea { get => _onPlantingArea; set => _onPlantingArea = value; }
     public bool OnFishingZone { get => _onFishingZone; set => _onFishingZone = value; }
 
     private void Awake()
@@ -78,9 +78,9 @@ public class PlayerStateManager : MonoBehaviour
     #region TriggerCheck
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.CompareTag("FarmingZone"))
+        if(other.gameObject.CompareTag("PlantingArea"))
         {
-            OnFarmingZone = true;
+            OnPlantingArea = true;
         }
         else if(other.gameObject.CompareTag("FishingZone"))
         {
@@ -90,9 +90,9 @@ public class PlayerStateManager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("FarmingZone"))
+        if(other.gameObject.CompareTag("PlantingArea"))
         {
-            OnFarmingZone = false;
+            OnPlantingArea = false;
         }
         else if(other.gameObject.CompareTag("FishingZone"))
         {
