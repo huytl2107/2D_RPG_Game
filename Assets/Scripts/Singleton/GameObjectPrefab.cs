@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameObjectPrefab : Singleton<GameObjectPrefab>
 {
     [System.Serializable]
-    public class Pool 
+    public class Pool
     {
         public GameEnum.EObjectPrefab tag;
         public GameObject prefab;
@@ -25,16 +25,16 @@ public class GameObjectPrefab : Singleton<GameObjectPrefab>
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach(Pool pool in pools) 
+        foreach (Pool pool in pools)
         {
             Queue<GameObject> objectsPool = new Queue<GameObject>();
 
-            for(int i=0 ; i < pool.size; i++)
+            for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
                 objectsPool.Enqueue(obj);
-            }    
+            }
             poolDictionary.Add(pool.tag.ToString(), objectsPool);
         }
     }
@@ -48,6 +48,23 @@ public class GameObjectPrefab : Singleton<GameObjectPrefab>
             return null;
         }
 
+        // Nếu pool rỗng, tạo một object mới và trả về
+        if (poolDictionary[tag].Count == 0)
+        {
+            // Lấy thông tin pool
+            Pool pool = pools.Find(p => p.tag == eTag);
+            if (pool == null)
+            {
+                Debug.LogError("Pool not found for tag: " + tag);
+                return null;
+            }
+
+            // Tạo object mới và thêm nó vào pool
+            GameObject newObj = Instantiate(pool.prefab);
+            newObj.SetActive(false);
+            poolDictionary[tag].Enqueue(newObj);
+        }
+
         // Làm tròn vị trí của player về .5 cho x và y
         float roundedX = Mathf.Floor(position.x) + .5f;
 
@@ -59,7 +76,7 @@ public class GameObjectPrefab : Singleton<GameObjectPrefab>
         GameObject objToSpawn = poolDictionary[tag].Dequeue();
         objToSpawn.transform.position = roundedPosition;
         objToSpawn.SetActive(true);
-        
+
         return objToSpawn;
     }
 }
