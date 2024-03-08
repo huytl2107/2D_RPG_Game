@@ -49,6 +49,8 @@ public class PlantNonGrownState : PlantBaseState
         else if (timeFraction > 0.25f)
         {
             state = (int)GameEnum.EPlantState.nonGrown2;
+            //Đổi layer để lấy hiệu ứng sorting layer
+            plant.ChangeLayer();
         }
         
         plant.Anim.SetInteger("State", state);

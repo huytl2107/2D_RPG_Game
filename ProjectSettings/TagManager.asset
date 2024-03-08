@@ -43,11 +43,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Terrain
     uniqueID: 3093941397
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Building
     uniqueID: 315056301

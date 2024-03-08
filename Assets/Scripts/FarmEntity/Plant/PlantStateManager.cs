@@ -40,5 +40,15 @@ public class PlantStateManager : FarmEntity
         CurrentState.EnterState(this);
     }
 
+    public void ChangeLayer()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+
+        if (renderer != null)
+        {
+            // Đặt sorting layer mới là "Building"
+            renderer.sortingLayerName = "Building";
+        }
+    }
 
 }
