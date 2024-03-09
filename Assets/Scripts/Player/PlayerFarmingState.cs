@@ -30,7 +30,7 @@ public class PlayerFarmingState : PlayerBaseState
 
     public override void CheckSwitchState()
     {
-        if(_lifeTime >= 0.3f)
+        if(_lifeTime >= 0.4f)
         {
             SwitchState(factory.Idle());
         }
@@ -51,8 +51,7 @@ public class PlayerFarmingState : PlayerBaseState
         else
         {
             Debug.Log("Cuoocs ddaast broo");
-            player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.farming);
-            GameObjectPrefab.Instance.GetPoolObject(GameEnum.EObjectPrefab.plantingAreaPrefab, player.transform.position);
+            player.Anim.SetInteger("State", (int)GameEnum.EPlayerState.plowing);
         }
     }
 }

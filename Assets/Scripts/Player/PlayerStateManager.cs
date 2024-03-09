@@ -100,4 +100,30 @@ public class PlayerStateManager : MonoBehaviour
         }
     }
     #endregion TriggerCheck
+
+    #region AnimEvent
+    public void Plowing()
+    {
+        GameObjectPrefab.Instance.GetPoolObject(GameEnum.EObjectPrefab.plantingAreaPrefab, transform.position);
+    }
+
+    public void Watering()
+    {
+
+    }
+
+    public void Choping()
+    {
+
+    }
+
+    public void Mining()
+    {
+
+    }
+
+
+
+
+    #endregion AnimEvent
 }
