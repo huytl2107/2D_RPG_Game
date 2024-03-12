@@ -38,7 +38,7 @@ public class PlayerFarmingState : PlayerBaseState
 
     public override void ExitState()
     {
-
+        _lifeTime = 0;
     }
 
     public void CheckAndChoseAnim()

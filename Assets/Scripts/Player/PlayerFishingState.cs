@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerFishingState : PlayerBaseState
 {
+    private float _lifeTime;
+
     public PlayerFishingState(PlayerStateManager currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
     }
@@ -18,6 +20,7 @@ public class PlayerFishingState : PlayerBaseState
     public override void UpdateState()
     {
         base.UpdateState();
+        _lifeTime += Time.deltaTime;
     }
 
     public override void FixedUpdateState()
@@ -27,11 +30,15 @@ public class PlayerFishingState : PlayerBaseState
 
     public override void CheckSwitchState()
     {
-        //Tạm bỏ đó :v
+        // Tạm check như vầy để test;
+        if(_lifeTime >= 3f)
+        {
+            SwitchState(factory.Idle());
+        }
     }
 
     public override void ExitState()
     {
-
+        _lifeTime = 0;
     }
 }
