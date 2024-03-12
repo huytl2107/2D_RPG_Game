@@ -11,6 +11,9 @@ public class PlantStateManager : FarmEntity
 
     [SerializeField] private int _timeToGrown;
 
+    private bool _isOnPlantingArea = false;
+    private bool _isDuplicate = false;
+
     public PlantBaseState CurrentState { get => _currentState; set => _currentState = value; }
     public int TimeToGrown { get => _timeToGrown; set => _timeToGrown = value; }
 
@@ -50,5 +53,4 @@ public class PlantStateManager : FarmEntity
             renderer.sortingLayerName = "Building";
         }
     }
-
 }
